@@ -1,0 +1,17 @@
+body{
+    background-color: darkblue;
+}
+
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.main_area {
+    background-color: cornflowerblue;
+    border: crimson solid 5px;
+    height: 50vh;
+    width: 50vw;
+}
