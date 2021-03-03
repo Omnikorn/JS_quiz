@@ -1,5 +1,5 @@
 body{
-    background-color: darkblue;
+    background-color: rgb(27, 27, 31);
 }
 
 
@@ -11,7 +11,18 @@ body{
 
 .main_area {
     background-color: cornflowerblue;
-    border: crimson solid 5px;
+    border: rgb(255, 255, 255) solid 5px;
     height: 50vh;
     width: 50vw;
+    box-shadow: 2px 2px 20px 10px #0ff;
 }
+
+.timeArea {
+    background-color: cornflowerblue;
+    border: rgb(255, 255, 255) solid 3px;
+    height: 10vh;
+    width: 25vw;
+    box-shadow: 2px 2px 10px 10px #0ff;
+    margin-top: 5vh;
+}
+
