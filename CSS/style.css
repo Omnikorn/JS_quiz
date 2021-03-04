@@ -1,9 +1,15 @@
 body{
-    background-color: rgb(27, 27, 31);
+    background-color: #0d0c0d;
 }
 
+.header_image {
+    width: 100%;
+    min-height: 300px;
+    margin-bottom: 15%;
+}
 
 .wrapper{
+    margin-top: 2%;
     display: flex;
     justify-content: center;
     align-content: center;

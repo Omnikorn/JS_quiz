@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/style.css" type="text/css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/style.css" type="text/css" />
     <title>THE GREAT JS QUIZ</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1> The great JS quiz</h1>
-        <img>
+        <!-- where the image will go  -->
+      <div class="header_iamge">
+        <img src="assets/jsquiz.png" alt="neon pic of quiz" />
+      </div>
     </header>
 
     <main>
-        <section class="wrapper">
-
-            <!-- main question area-->
-            <div class="main_area">
-                do we need somthing in here
-                <p> question will appear here i huess</p>
-                <button id="generate" class="btn"> options go here </button>          
-             </div>
-        </section>
-        <section class="wrapper">
-    
-            <!-- timmer area  -->
-            <div class="timeArea">
-
-            </div>
-        </section>
+      <section class="wrapper">
+        <!-- main question area-->
+        <div class="main_area">
+          do we need somthing in here
+          <p id="questionHere">question will appear here i huess</p>
+          <button id="generate" class="btn">options go here</button>
+        </div>
+      </section>
+      <section class="wrapper">
+        <!-- timmer area  -->
+        <div class="timeArea"></div>
+      </section>
     </main>
     <script src="JS/script.js"></script>
-</body>
+  </body>
 </html>
