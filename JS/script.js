@@ -9,6 +9,9 @@ var currentQuestion=0;
 var timeEl=document.querySelector("#time");
 var timeLeft= 120;
 var score= 0;
+var scoreEl=document.querySelector("#score");
+var startEl=document.querySelector("#start_btn");
+var hideEl=document.querySelector("body > main > section.wrapper > div.hide")
 
 
 let question =[
@@ -37,9 +40,18 @@ let question =[
     correctAnswer: "d",
     }
 ]
+
+// pressing the start button
+// startEl.addEventListener("click", Quiz)
+ 
+
+// function hideTheStart (){
+//     hideEl.setAttribute("style", "display: none");  
+// }
 // main functions used in the quiz
 
 function Quiz() {
+    // hideTheStart()
     console.log("this is the main quiz");
     console.log (question.length);
     if (currentQuestion < question.length && timeLeft > 0){
@@ -73,6 +85,7 @@ function correctQuestion() {
     // soem sort of message is needed to say you are correct.
     currentQuestion ++;
     score = score + 10;
+    scoreEl.textContent=(score)
     console.log ("currentquestion number ::" +currentQuestion);
     console.log ("score ::" + score);
     Quiz(); 
@@ -106,4 +119,4 @@ function setTime() {
     }, 1000);
   }
 
-Quiz(); setTime()
+// Quiz(); setTime()
