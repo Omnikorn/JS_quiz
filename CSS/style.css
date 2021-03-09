@@ -3,23 +3,45 @@ body{
 }
 
 .header_image {
-    width: 100%;
-    min-height: 300px;
+    width: 100vw;
+    height: auto;
     margin-bottom: 15%;
 }
 
 .wrapper{
     margin-top: 2%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+}
+.hide{
+    background-color: crimson;
+    color: white;
+    width: 80vw;
+    min-height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7%;
+
+}
+
+#start_btn {
+     width: 60%;
+     height:30%;
+    background-color: tomato;
+    color: white;
+    border-radius: 10%;
+    font-size: large;
+
 }
 
 .answer_area {
     background-color: cornflowerblue;
     border: rgb(255, 255, 255) solid 5px;
     height: 50vh;
-    width: 50vw;
+    width: 80vw;
     box-shadow: 2px 2px 20px 10px #0ff;
     display: flex;
     flex-direction: column;

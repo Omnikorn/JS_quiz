@@ -1,25 +1,109 @@
-// questions
-// this might  need to go in an array 
-questions=[
-    q1 {
-    text:" where is the eiffel tower located ?";
-    options: ["Paris", "London", "Moscow", "Berlin"];
-    correctAnswer:"Paris"
-},
+// variables used in the quiz
 
-    q2 {
-    text:"Where is the Beetham tower located ?";
-    options: ["london", "Manchester", "New Castle", "Hull"];
-    correctAnswer:"Manchester";
-},
-];
+var questEl = document.querySelector("#questText");
+var aEl= document.querySelector("#a");
+var bEl= document.querySelector("#b");
+var cEl= document.querySelector("#c");
+var dEl= document.querySelector("#d");
+var currentQuestion=0;
+var timeEl=document.querySelector("#time");
+var timeLeft= 120;
+var score= 0;
 
-for (var i=0; i<question.length; i++ ) {
-    let askQuestion=getElementById("questionHere");
-    askQuestion.appendChild(questions[i].text);
-    
-    for (var j=0, j<questions[i].options[j], j++) {
-        
+
+let question =[
+    {
+        text: "paris is the capital of ?",
+        ansA: "UK",
+        ansB: "France",
+        ansC: "Germany",
+        ansD: "Canada",
+        correctAnswer: "b",
+    },
+    {
+        text: "The longest river in the world is ?",
+        ansA: "Nile",
+        ansB: "Amazon",
+        ansC: "Thames",
+        ansD: "Danube",
+        correctAnswer: "a",
+    },
+    {
+    text: "what is the highest mountain in the world",
+    ansA: "Mount Fuji",
+    ansB: "Mount Kelimanjaro",
+    ansC: "Mount Snowdin",
+    ansD: "The Himalaya",
+    correctAnswer: "d",
     }
+]
+// main functions used in the quiz
 
+function Quiz() {
+    console.log("this is the main quiz");
+    console.log (question.length);
+    if (currentQuestion < question.length && timeLeft > 0){
+    questionRender();
+    }
+    else { endGame ();}
+    
 }
+// this renders questions
+function questionRender(){
+    console.log("this is question render")
+questEl.textContent =(question[currentQuestion].text);
+aEl.textContent = (question[currentQuestion].ansA);
+bEl.textContent = (question[currentQuestion].ansB);
+cEl.textContent = (question[currentQuestion].ansC);
+dEl.textContent = (question[currentQuestion].ansD);
+}
+
+// this checks for the clicked answer and runs appropriate function. 
+function checkAnswer(clicked_id) {
+    console.log(clicked_id)
+if (clicked_id === question[currentQuestion].correctAnswer) {
+    console.log(clicked_id);
+    correctQuestion ();
+}
+else {wrongQuestion();}
+}
+
+
+function correctQuestion() {
+    // soem sort of message is needed to say you are correct.
+    currentQuestion ++;
+    score = score + 10;
+    console.log ("currentquestion number ::" +currentQuestion);
+    console.log ("score ::" + score);
+    Quiz(); 
+}
+
+function wrongQuestion() {
+    // some sort of message to say you are wrong.
+    currentQuestion ++;
+    timeLeft = timeLeft - 20;
+    Quiz();
+}
+
+function endGame (){
+    // calculate score form time left
+    // input initial and save them to local storage along with the score 
+}
+
+function setTime() {
+    console.log("in the timer function")
+    timeEl.textContent = (timeLeft);
+    var timerInterval = setInterval(function() {
+      timeLeft--;
+      timeEl.textContent =(timeLeft + " seconds left" )
+  
+      if(timeLeft === 0) {
+        
+        clearInterval(timerInterval);
+        
+      }
+  
+    }, 1000);
+  }
+
+Quiz(); setTime()
