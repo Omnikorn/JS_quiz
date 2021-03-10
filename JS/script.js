@@ -41,13 +41,14 @@ let question =[
     }
 ]
 
-// pressing the start button
-// startEl.addEventListener("click", Quiz)
- 
 
-// function hideTheStart (){
-//     hideEl.setAttribute("style", "display: none");  
-// }
+
+
+function hideTheStart (){
+    hideEl.setAttribute("style", "display: none");  
+}
+
+
 // main functions used in the quiz
 
 function Quiz() {
@@ -80,7 +81,7 @@ if (clicked_id === question[currentQuestion].correctAnswer) {
 else {wrongQuestion();}
 }
 
-
+// if the player gets the correct answer 
 function correctQuestion() {
     // soem sort of message is needed to say you are correct.
     currentQuestion ++;
@@ -91,6 +92,7 @@ function correctQuestion() {
     Quiz(); 
 }
 
+// if the player gets the wrong answer 
 function wrongQuestion() {
     // some sort of message to say you are wrong.
     currentQuestion ++;
@@ -119,4 +121,13 @@ function setTime() {
     }, 1000);
   }
 
-// Quiz(); setTime()
+
+ 
+// the start button for the quiz - calls the main game and time functions then hides the start button. 
+
+startEl.addEventListener("click", function(event){
+    event.preventDefault();
+    Quiz();
+    setTime();
+    hideTheStart();
+})
