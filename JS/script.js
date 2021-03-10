@@ -11,7 +11,9 @@ var timeLeft= 120;
 var score= 0;
 var scoreEl=document.querySelector("#score");
 var startEl=document.querySelector("#start_btn");
-var hideEl=document.querySelector("body > main > section.wrapper > div.hide")
+var hideEl=document.querySelector("body > main > section.wrapper > div.hide");
+var finalScoreEl=document.querySelector("#finalScaor");
+var answerAreaEl=document.querySelector("body > main > section.wrapper > div.answer_area");
 
 
 let question =[
@@ -101,7 +103,19 @@ function wrongQuestion() {
 }
 
 function endGame (){
-    // calculate score form time left
+    localStorage.setItem("score", score);
+    answerAreaEl.setAttribute("style", "display: none");
+    finalScoreEl.setAttribute("style", "visibilty: visible");
+    hideEl.setAttribute("style", "display: flex");
+    finalScoreEl.setAttribute("style","color: rgb(164,87,105); font-size: 36px");
+    
+  
+
+    // finalScoreEl.classList.add("endGame");
+    
+    finalScoreEl.textContent=(score);
+
+    // calculate score form score
     // input initial and save them to local storage along with the score 
 }
 
