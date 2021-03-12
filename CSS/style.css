@@ -18,9 +18,9 @@ body{
     
 }
 
-body > header > div > img{
+/* body > header > div > img{
     mix-blend-mode: soft-light ;
-}
+} */
 
 .wrapper{
     margin-top: 2%;
@@ -114,14 +114,14 @@ border: 4px solid var(--shadowTwo);
 }
 
 
-.show {
+/* .show {
     
     visibility: hidden;
     
     
     
     
-}
+} */
 
 .screen {
     background-color: var(--mainColor);
