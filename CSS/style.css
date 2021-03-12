@@ -114,14 +114,10 @@ border: 4px solid var(--shadowTwo);
 }
 
 
-/* .show {
-    
-    visibility: hidden;
-    
-    
-    
-    
-} */
+.show {
+   display: none; 
+   
+}
 
 .screen {
     background-color: var(--mainColor);
@@ -133,6 +129,7 @@ border: 4px solid var(--shadowTwo);
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
+    
     
      
     

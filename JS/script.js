@@ -21,6 +21,7 @@ var answerAreaEl = document.querySelector(
 var initialEl = document.querySelector("#initials")
 var previousEl = document.querySelector("#previous_score")
 var submitEl = document.querySelector("#submit")
+var showEl = document.querySelector("body > main > section.wrapper > div.show")
 
 let question = [
 	{
@@ -107,22 +108,20 @@ function wrongQuestion() {
 	Quiz()
 }
 
+// this function runs when the game ends
 function endGame() {
 	localStorage.setItem("score", score)
 	answerAreaEl.setAttribute("style", "display: none")
-	finalScoreEl.setAttribute("style", "visibilty: visible")
+	// finalScoreEl.setAttribute("style", "visibilty: visible")
 	hideEl.setAttribute("style", "display: flex")
 	finalScoreEl.setAttribute(
 		"style",
 		"color: rgb(164,87,105); font-size: 36px"
 	)
 
-	// finalScoreEl.classList.add("endGame");
+	showEl.style.display = "unset"
 
 	finalScoreEl.textContent = score
-
-	// calculate score form score
-	// input initial and save them to local storage along with the score
 
 	renderMessage()
 }
