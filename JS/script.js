@@ -22,6 +22,7 @@ var initialEl = document.querySelector("#initials")
 var previousEl = document.querySelector("#previous_score")
 var submitEl = document.querySelector("#submit")
 var showEl = document.querySelector("body > main > section.wrapper > div.show")
+var retakeEl = document.querySelector("#retake")
 
 let question = [
 	{
@@ -57,7 +58,9 @@ function hideTheStart() {
 // main functions used in the quiz
 
 function Quiz() {
-	// hideTheStart()
+	
+    hideTheStart()
+    
 	console.log("this is the main quiz")
 	console.log(question.length)
 	if (currentQuestion < question.length && timeLeft > 0) {
@@ -113,7 +116,7 @@ function endGame() {
 	localStorage.setItem("score", score)
 	answerAreaEl.setAttribute("style", "display: none")
 	// finalScoreEl.setAttribute("style", "visibilty: visible")
-	hideEl.setAttribute("style", "display: flex")
+	// hideEl.setAttribute("style", "display: flex")
 	finalScoreEl.setAttribute(
 		"style",
 		"color: rgb(164,87,105); font-size: 36px"
@@ -142,6 +145,7 @@ function setTime() {
 // the start button for the quiz - calls the main game and time functions then hides the start button.
 
 startEl.addEventListener("click", function (event) {
+    
 	event.preventDefault()
 	Quiz()
 	setTime()
@@ -168,4 +172,7 @@ submitEl.addEventListener("click", function (event) {
 		"highScore",
 		JSON.stringify(highScore)
 	)
+})
+retakeEl.addEventListener("click", function(){
+    window.location.reload();
 })
