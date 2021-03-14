@@ -8,6 +8,7 @@ var dEl = document.querySelector("#d")
 var currentQuestion = 0
 var timeEl = document.querySelector("#time")
 var timeLeft = 120
+var finalTime = 0
 var score = 0
 var scoreEl = document.querySelector("#score")
 var startEl = document.querySelector("#start_btn")
@@ -26,29 +27,46 @@ var retakeEl = document.querySelector("#retake")
 
 let question = [
 	{
-		text: "paris is the capital of ?",
-		ansA: "UK",
-		ansB: "France",
-		ansC: "Germany",
-		ansD: "Canada",
+		text: "Inside which HTML element do we Javascript?",
+		ansA: "scripting",
+		ansB: "script",
+		ansC: "js",
+		ansD: "javascript",
 		correctAnswer: "b",
 	},
 	{
-		text: "The longest river in the world is ?",
-		ansA: "Nile",
-		ansB: "Amazon",
-		ansC: "Thames",
-		ansD: "Danube",
+		text: "How would you write 'hello world' in an alert box",
+		ansA: "aler('hello world')",
+		ansB: "msg('hello world')",
+		ansC: "alertBox('hello world')",
+		ansD: "msgBox('hello world')",
 		correctAnswer: "a",
 	},
 	{
-		text: "what is the highest mountain in the world",
-		ansA: "Mount Fuji",
-		ansB: "Mount Kelimanjaro",
-		ansC: "Mount Snowdin",
-		ansD: "The Himalaya",
+		text: "which of these is not used to declare a variable",
+		ansA: "var",
+		ansB: "const",
+		ansC: "let",
+		ansD: "variable",
 		correctAnswer: "d",
 	},
+
+	{
+		text: "how would you write an if statement in Javascript",
+		ansA: "if i = 5",
+		ansB: "if i == 5 then",
+		ansC: "if i = 5",
+		ansD: "if (i==5)",
+		correctAnswer: "d",	
+	},
+	{
+		text: "how to write an if statement for saying i is not equal to 5",
+		ansA: "if (i !=5)",
+		ansB: "if i <> 5",
+		ansC: "if i =! 5 then",
+		ansD: "if (i<>5)",
+		correctAnswer: "a",		
+	}
 ]
 
 function hideTheStart() {
@@ -124,6 +142,8 @@ function endGame() {
 
 	showEl.style.display = "unset"
 
+	finalTime = timeLeft
+
 	finalScoreEl.textContent = score
 
 	renderMessage()
@@ -135,6 +155,13 @@ function setTime() {
 	var timerInterval = setInterval(function () {
 		timeLeft--
 		timeEl.textContent = timeLeft + " seconds left"
+
+		if (finalTime > 0) {
+
+			timeEl.textContent = "You had " + finalTime + " seconds left."
+			clearInterval(timerInterval)
+
+		}
 
 		if (timeLeft === 0) {
 			clearInterval(timerInterval)
