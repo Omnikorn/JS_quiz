@@ -25,6 +25,9 @@ var submitEl = document.querySelector("#submit")
 var showEl = document.querySelector("body > main > section.wrapper > div.show")
 var retakeEl = document.querySelector("#retake")
 
+
+//  question to be used
+
 let question = [
     {
         text: "Inside which HTML element do we Javascript?",
@@ -36,7 +39,7 @@ let question = [
     },
     {
         text: "How would you write 'hello world' in an alert box",
-        ansA: "aler('hello world')",
+        ansA: "alert('hello world')",
         ansB: "msg('hello world')",
         ansC: "alertBox('hello world')",
         ansD: "msgBox('hello world')",
@@ -68,6 +71,8 @@ let question = [
         correctAnswer: "a",     
     }
 ]
+
+// to hide the start button after the quiz starts
 
 function hideTheStart() {
     hideEl.setAttribute("style", "display: none")
@@ -112,7 +117,7 @@ function checkAnswer(clicked_id) {
 
 // if the player gets the correct answer
 function correctQuestion() {
-    // soem sort of message is needed to say you are correct.
+    
     currentQuestion++
     score = score + 10
     scoreEl.textContent = score
@@ -123,7 +128,7 @@ function correctQuestion() {
 
 // if the player gets the wrong answer
 function wrongQuestion() {
-    // some sort of message to say you are wrong.
+    
     currentQuestion++
     timeLeft = timeLeft - 20
     Quiz()
@@ -131,10 +136,9 @@ function wrongQuestion() {
 
 // this function runs when the game ends
 function endGame() {
-    // localStorage.setItem("score", score)
+    
     answerAreaEl.setAttribute("style", "display: none")
-    // finalScoreEl.setAttribute("style", "visibilty: visible")
-    // hideEl.setAttribute("style", "display: flex")
+    
     finalScoreEl.setAttribute(
         "style",
         "color: rgb(164,87,105); font-size: 50px"
@@ -148,6 +152,8 @@ function endGame() {
 
     renderMessage()
 }
+
+// this function sets the timer going
 
 function setTime() {
     console.log("in the timer function")
@@ -179,6 +185,8 @@ startEl.addEventListener("click", function (event) {
     hideTheStart()
 })
 
+// this function displays the end game message and score 
+
 function renderMessage() {
     var PreviousHighScore = JSON.parse(
         localStorage.getItem("highScore")
@@ -200,6 +208,8 @@ function renderMessage() {
          previousEl.textContent = "You are the first person to take the quiz...so you win"
      }
 }
+
+// this function stores initials and scores locally
 
 submitEl.addEventListener("click", function (event) {
     event.preventDefault()
