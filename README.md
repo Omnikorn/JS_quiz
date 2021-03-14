@@ -6,7 +6,7 @@ The application runs when the user presses start quiz, and they are presented wi
 
 If the user selects the correct answer, they receive 10 points in the score area and are presented with the next question. 
 
-
+![score_and_timer](https://user-images.githubusercontent.com/75341811/111068523-fc839080-84c0-11eb-8036-cad248b05254.png)
 
 If they however select the wrong answer a time penalty of 10 seconds is deducted from the total time and the user is then presented with the next question. 
 
