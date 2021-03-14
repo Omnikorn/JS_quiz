@@ -131,13 +131,13 @@ function wrongQuestion() {
 
 // this function runs when the game ends
 function endGame() {
-	localStorage.setItem("score", score)
+	// localStorage.setItem("score", score)
 	answerAreaEl.setAttribute("style", "display: none")
 	// finalScoreEl.setAttribute("style", "visibilty: visible")
 	// hideEl.setAttribute("style", "display: flex")
 	finalScoreEl.setAttribute(
 		"style",
-		"color: rgb(164,87,105); font-size: 36px"
+		"color: rgb(164,87,105); font-size: 50px"
 	)
 
 	showEl.style.display = "unset"
@@ -182,22 +182,41 @@ startEl.addEventListener("click", function (event) {
 function renderMessage() {
 	var PreviousHighScore = JSON.parse(
 		localStorage.getItem("highScore")
-	)
-	if (PreviousHighScore !== null) {
-		previousEl.textContent = PreviousHighScore
+	) || [];
+
+	var highestScore = 0; 
+	var highestScoreDisplay = "";
+	for (var i = 0; i< PreviousHighScore.length; i++){
+		var score = PreviousHighScore[i].finalScore;
+		if(score > highestScore){
+			highestScoreDisplay = PreviousHighScore[i].initials + ":" + PreviousHighScore[i].finalScore;
+		}
 	}
+
+	 if (highestScoreDisplay.length > 0) {
+	 	previousEl.textContent = highestScoreDisplay
+	 	
+	 } else {
+		 previousEl.textContent = "You are the first person to take the quiz...so you win"
+	 }
 }
 
 submitEl.addEventListener("click", function (event) {
 	event.preventDefault()
-	var highScore = {
-		initials: initialEl.Value,
+	var highScores = JSON.parse(
+		localStorage.getItem("highScore")
+	) || [];
+	var initials = initialEl.value.trim()
+	console.log(initials)
+	var newScore = {
+		initials: initials,
 		finalScore: score,
 	}
+highScores.push(newScore)
 
 	localStorage.setItem(
 		"highScore",
-		JSON.stringify(highScore)
+		JSON.stringify(highScores)
 	)
 })
 retakeEl.addEventListener("click", function(){
