@@ -16,3 +16,8 @@ When the game ends an “endgame function” is called and this presents the use
 ![final_score](https://user-images.githubusercontent.com/75341811/111068565-2937a800-84c1-11eb-8c70-d8a99de981be.png)
 
 Some of the quiz questions have been taken from w3schools.com JavaScript online quiz (https://www.w3schools.com/quiztest/quiztest.asp?qtest=JS).
+
+
+links:
+Repository: https://github.com/Omnikorn/JS_quiz.git
+deployed: https://omnikorn.github.io/JS_quiz/
