@@ -1,5 +1,5 @@
 # JS_quiz
-an interactive quize page built using JS
+An interactive quize page built using JS.
 The application runs when the user presses start quiz, and they are presented with a question and several multiple-choice options. 
 
 ![start_of_quiz](https://user-images.githubusercontent.com/75341811/111068471-c0e8c680-84c0-11eb-8bc4-158256c0fa82.png)
